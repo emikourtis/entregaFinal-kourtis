@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineShoppingCart } from 'react-icons/fa';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import CarWidget from './CarWidget';
 
 const Navbar = () => {
     return (
         <div>
-            <AiOutlineShoppingCart className="App-logo" />
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 
                 <div className="container-fluid">
-
-                    <Link className="navbar-brand" to='/'>FakeStore</Link>
+                    <CarWidget />
+                    <AiOutlineShoppingCart />
+                    <Link className="navbar-brand ms-5" to='/'>FakeStore</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
