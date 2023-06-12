@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import CarWidget from './CarWidget';
+import CartWidget from './CartWidget';
+
 
 const Navbar = () => {
     return (
@@ -10,7 +11,7 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 
                 <div className="container-fluid">
-                    <CarWidget />
+                    <CartWidget />
                     <AiOutlineShoppingCart />
                     <Link className="navbar-brand ms-5" to='/'>FakeStore</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CarWidget = () => {
+const CartWidget = () => {
   return (
     <a className="btn nav-link ms-5" >
       <span className="fa-solid " id="carritoContenedor">0</span>
@@ -8,4 +8,4 @@ const CarWidget = () => {
   );
 }
 
-export default CarWidget;
+export default CartWidget;
