@@ -1,3 +1,3 @@
-# Proyecto e-commerce para CoderHouse
+# Proyecto e-commerce (React) para CoderHouse
 
 
