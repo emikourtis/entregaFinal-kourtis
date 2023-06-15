@@ -12,7 +12,6 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import CartWidget from './CartWidget';
 
 const pages = ['Products', 'Contact'];
@@ -127,7 +126,7 @@ function ResponsiveAppBar() {
             ))}
           </Box>
             <CartWidget />
-            <AiOutlineShoppingCart />
+            
           
         </Toolbar>
       </Container>
