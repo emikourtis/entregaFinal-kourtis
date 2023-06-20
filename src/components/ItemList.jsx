@@ -1,5 +1,5 @@
 import React from 'react'
-import CardModal from './Item'
+import Item from './Item';
 
 const ItemList = ({ productos }) => {
   return (
@@ -8,7 +8,7 @@ const ItemList = ({ productos }) => {
       
       <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
         {productos.map((producto) => (
-        <CardModal key={producto.id} producto={producto} />
+        <Item key={producto.id} producto={producto} />
       ))}
       </div>
     </div>

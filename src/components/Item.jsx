@@ -1,16 +1,12 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import React, { useRef, useEffect, useState } from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
-const CardModal = ({ producto }) => {
-  const cardRef = React.useRef(null);
-  const [cardHeight, setCardHeight] = React.useState(0);
+const Item = ({ producto }) => {
+  const cardRef = useRef(null);
+  const [cardHeight, setCardHeight] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (cardRef.current) {
       const height = cardRef.current.offsetHeight;
       setCardHeight(height);
@@ -19,38 +15,31 @@ const CardModal = ({ producto }) => {
 
   return (
     <div>
-      <Card ref={cardRef} sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          sx={{
+      <Card ref={cardRef} style={{ maxWidth: '345px' }}>
+        <Card.Img
+          style={{
             height: cardHeight,
             maxHeight: '100%',
             objectFit: 'contain',
           }}
-          image={producto.image}
-          title={producto.name}
+          variant="top"
+          src={producto.image}
+          alt={producto.name}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {producto.name}
-          </Typography>
-          <Typography gutterBottom variant="h5" component="div">
-            $ {producto.price}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {producto.categoria}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small" variant="contained">Agregar al carrito</Button>
-        </CardActions>
-        <CardActions>
-          <Button size="small" variant="contained" to={`/item/${producto.id}`} >Detalle del producto</Button>
-        </CardActions>
+        <Card.Body>
+          <Card.Title>{producto.name}</Card.Title>
+          <Card.Text>${producto.price}</Card.Text>
+          <Card.Text>{producto.categoria}</Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <Button size="sm" variant="primary">Agregar al carrito</Button>
+        </Card.Footer>
+        <Card.Footer>
+          <Button size="sm" variant="primary" href={`/item/${producto.id}`}>Detalle del producto</Button>
+        </Card.Footer>
       </Card>
     </div>
   );
 };
 
-export default CardModal;
-
+export default Item;

@@ -1,149 +1,63 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import CartWidget from './CartWidget';
+
+import React, { useState } from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-
-const pages = ['All Products', 'Cells', 'Tablets'];
-
+import CartWidget from './CartWidget';
 
 function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [expanded, setExpanded] = useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const handleToggleNav = () => {
+    setExpanded(!expanded);
   };
 
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const handleSelectCategory = (category) => {
+    setCategoriaSeleccionada(category.toLowerCase());
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            FakeStore
-          </Typography>
+    <Navbar expand="md" bg="dark" variant="dark" fixed="top">
+      <Container fluid>
+        <Navbar.Brand as={Link} to="/" className="mr-2">
+          FakeStore
+        </Navbar.Brand>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+        <Navbar.Toggle aria-controls="navbar-nav" onClick={handleToggleNav} />
+
+        <Navbar.Collapse id="navbar-nav" className={expanded ? 'show' : ''}>
+          <Nav className="mr-auto">
+            <Nav.Link
+              as={Link}
+              to="/"
+              onClick={() => handleSelectCategory('all products')}
+              className={categoriaSeleccionada === 'all products' ? 'active' : ''}
             >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+              All Products
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/cells"
+              onClick={() => handleSelectCategory('cells')}
+              className={categoriaSeleccionada === 'cells' ? 'active' : ''}
             >
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  component={Link}
-                  to={`/${page.toLowerCase()}`}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {page}
-                </Button>
-              ))}
-            </Menu>
-          </Box>
+              Cells
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/tablets"
+              onClick={() => handleSelectCategory('tablets')}
+              className={categoriaSeleccionada === 'tablets' ? 'active' : ''}
+            >
+              Tablets
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
 
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={() => setCategoriaSeleccionada(page.toLowerCase())}
-                sx={{
-                  my: 2,
-                  color: categoriaSeleccionada === page.toLowerCase() ? 'primary.main' : 'white',
-                  display: 'block',
-                }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
+        <Nav className="ml-auto">
           <CartWidget />
-        </Toolbar>
+        </Nav>
       </Container>
-    </AppBar>
+    </Navbar>
   );
 }
 

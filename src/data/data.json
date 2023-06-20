@@ -5,7 +5,7 @@
         "price": "55000",
         "stock": "10",
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_738081-MLA52444225522_112022-F.webp",
-        "categoria": "celulares",
+        "categoria": "cells",
         "description": "64gb de capacidad-color negro-liberado-garantia 6 meses "
     },
     {
@@ -14,7 +14,7 @@
         "price": "75000",
         "stock": "10",
         "image": "https://http2.mlstatic.com/D_NQ_NP_789966-MLU54969343009_042023-O.webp",
-        "categoria": "celulares",
+        "categoria": "cells",
         "description": "128gb de capacidad-4gb memoria-color negro-liberado-garantia 6 meses "
     },
     {
@@ -23,7 +23,7 @@
         "price": "250000",
         "stock": "10",
         "image": "https://http2.mlstatic.com/D_NQ_NP_883546-MLU69556143824_052023-O.webp",
-        "categoria": "celulares",
+        "categoria": "cells",
         "description": "128gb de capacidad-colores varios-liberado-garantia 6 meses "
     },
     {
@@ -32,7 +32,7 @@
         "price": "65000",
         "stock": "10",
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_787601-MLA52773800407_122022-F.webp",
-        "categoria": "celulares",
+        "categoria": "cells",
         "description": "128gb de capacidad-4gb ram-color plateado-liberado-garantia 6 meses "
     },
     {
@@ -41,7 +41,7 @@
         "price": "75000",
         "stock": "10",
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_907305-MLU69805932292_062023-F.webp",
-        "categoria": "celulares",
+        "categoria": "cells",
         "description": "128gb de capacidad-color azul-4gb ram-liberado-garantia 6 meses "   
     },
     {
@@ -50,7 +50,7 @@
         "price": "1150000",
         "stock": "10",
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_912054-MLA53354557227_012023-F.webp",
-        "categoria": "celulares" ,
+        "categoria": "cells" ,
         "description": "128gb de capacidad-color verde-liberado-garantia 6 meses "  
     },
     {
