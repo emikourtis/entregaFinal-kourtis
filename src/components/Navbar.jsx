@@ -36,7 +36,7 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
             </Nav.Link>
             <Nav.Link
               as={Link}
-              to="/cells"
+              to="/productos/cells"
               onClick={() => handleSelectCategory('cells')}
               className={categoriaSeleccionada === 'cells' ? 'active' : ''}
             >
@@ -44,7 +44,7 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
             </Nav.Link>
             <Nav.Link
               as={Link}
-              to="/tablets"
+              to="/productos/tablets"
               onClick={() => handleSelectCategory('tablets')}
               className={categoriaSeleccionada === 'tablets' ? 'active' : ''}
             >

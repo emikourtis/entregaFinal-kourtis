@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const Item = ({ producto }) => {
   const cardRef = useRef(null);
@@ -31,11 +32,9 @@ const Item = ({ producto }) => {
           <Card.Text>${producto.price}</Card.Text>
           <Card.Text>{producto.categoria}</Card.Text>
         </Card.Body>
+        
         <Card.Footer>
-          <Button size="sm" variant="primary">Agregar al carrito</Button>
-        </Card.Footer>
-        <Card.Footer>
-          <Button size="sm" variant="primary" href={`/item/${producto.id}`}>Detalle del producto</Button>
+          <Link className='btn btn-primary btn-sm'  to={`/item/${producto.id}`}>Detalle del producto</Link>
         </Card.Footer>
       </Card>
     </div>
