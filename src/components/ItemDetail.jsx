@@ -34,7 +34,7 @@ const ItemDetail = ( {item} ) => {
         </Card.Body>
         
         <Card.Footer>
-        <ItemCount />
+        <ItemCount item={item} />
         </Card.Footer>
       </Card>
       

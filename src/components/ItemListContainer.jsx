@@ -7,20 +7,24 @@ const ItemListContainer = () => {
   
   const [productos, setProductos] = useState([]);
   const [titulo, setTitulo] = useState("Productos")
-  const categoria = useParams().categoria;
+  const categoria = useParams().categoria || 'todos';
+  console.log(categoria)
  
 
   useEffect(() => {
     pedirDatos()
-      .then((res) =>{
-        if(categoria){
-          setProductos(res.filter((prod) => prod.categoria === categoria));
+      .then((res) => {
+        console.log(res);
+        let productosFiltrados = res;
+        if (categoria && categoria !== 'todos') {
+          productosFiltrados = res.filter((prod) => prod.categoria === categoria);
           setTitulo(categoria);
+        } else {
+          setTitulo('Productos');
         }
-        setProductos(res);
-        setTitulo('Productos');
-    })
-  }, [categoria])
+        setProductos(productosFiltrados);
+      });
+  }, [categoria]);
   
   
   return (
