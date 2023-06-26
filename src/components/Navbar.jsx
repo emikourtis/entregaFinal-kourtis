@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
+  
+
   const [expanded, setExpanded] = useState(false);
 
   const handleToggleNav = () => {

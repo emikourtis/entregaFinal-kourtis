@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
 
-const ItemCount = ( {item} ) => {
+const ItemCount = ( {cantidad, handleRestar, handleSumar, handleAgregar} ) => {
 
-    const [cantidad, setCantidad] = useState(1);
-    const handleRestar = () => {
-        cantidad > 1 && setCantidad(cantidad - 1)
-    }
-    const handleSumar = () => {
-        cantidad < item.stock && setCantidad(cantidad + 1)
-    }
+
 
   return (
     <>
-    <div>
-        <Button onClick={handleRestar} >-</Button>
-        <p>{cantidad}</p>
-        <Button onClick={handleSumar}>+</Button>
-    </div>
-    <Button size="sm" variant="primary">Agregar al carrito</Button>
-      
+     <Row>
+        <Col>
+          <Button onClick={handleRestar}>-</Button>
+        </Col>
+        <Col>
+          <p>{cantidad}</p>
+        </Col>
+        <Col>
+          <Button onClick={handleSumar}>+</Button>
+        </Col>
+      </Row>
+      <Button onClick={ handleAgregar } size="sm" variant="primary">
+        Agregar al carrito
+      </Button>
     </>
   )
 }

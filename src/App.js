@@ -1,30 +1,58 @@
 import React from 'react';
 import NavBar from './components/Navbar';
-import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import { useState } from 'react';
+import { CartContext } from './context/CartContext';
 
 function App() {
   
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
+  const [carrito, setCarrito] = useState([]);
+
+  const agregarAlCarrito = (item, cantidad) => {
+    const itemAgregado = {...item, cantidad};
+    const nuevoCarrito = [...carrito]
+    console.log(nuevoCarrito)
+    const estaEnElCarrito = nuevoCarrito.find((prod)=>prod.id === itemAgregado.id)
+    if(estaEnElCarrito){
+      estaEnElCarrito.cantidad += cantidad;
+      
+    }else{
+      nuevoCarrito.push(itemAgregado);
+     
+    }
+    setCarrito(nuevoCarrito);
+    
+    
+  }
+ 
+  const nroCarrito = () => {
+    return carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+  }
 
   return (
     <div>
+      <CartContext.Provider value={{carrito, agregarAlCarrito, nroCarrito}}>
       <BrowserRouter>
-      <NavBar categoriaSeleccionada={categoriaSeleccionada}
-          setCategoriaSeleccionada={setCategoriaSeleccionada} />
-      
+        <NavBar
+          categoriaSeleccionada={categoriaSeleccionada}
+          setCategoriaSeleccionada={setCategoriaSeleccionada}
+        />
+
         <Routes>
-          <Route path='/' element={<ItemListContainer />} />
-          <Route path='/item/:id' element={<ItemDetailContainer />} />
-          <Route path='/productos/:categoria' element={<ItemListContainer />} />
-          
+          <Route
+            path="/"
+            element={<ItemListContainer />}/>
+          <Route
+            path="/item/:id"
+            element={<ItemDetailContainer />}/>
+          <Route path="/productos/:categoria" element={<ItemListContainer />} />
         </Routes>
       </BrowserRouter>
+      </CartContext.Provider>
     </div>
-
-
   );
 }
 
