@@ -12,9 +12,11 @@ function App() {
   const [carrito, setCarrito] = useState([]);
 
   const agregarAlCarrito = (item, cantidad) => {
+    
     const itemAgregado = {...item, cantidad};
-    const nuevoCarrito = [...carrito]
-    console.log(nuevoCarrito)
+    const nuevoCarrito = [itemAgregado]
+    
+    
     const estaEnElCarrito = nuevoCarrito.find((prod)=>prod.id === itemAgregado.id)
     if(estaEnElCarrito){
       estaEnElCarrito.cantidad += cantidad;
@@ -31,6 +33,7 @@ function App() {
   const nroCarrito = () => {
     return carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
   }
+  console.log(nroCarrito)
 
   return (
     <div>

@@ -70,5 +70,14 @@
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_803992-MLA52988770428_122022-F.webp",
         "categoria": "tablets" ,
         "description": "64gb de capacidad-color plateada-3gb ram-pantalla 10.9-liberado-garantia 6 meses "  
+    },
+    {
+        "id": "9",
+        "name": "iPad Apple 8th generation 2022 A2453",
+        "price": "160000",
+        "stock": "10",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_803992-MLA52988770428_122022-F.webp",
+        "categoria": "tablets" ,
+        "description": "64gb de capacidad-color plateada-2gb ram-pantalla 10.9-liberado-garantia 6 meses "  
     }
 ]

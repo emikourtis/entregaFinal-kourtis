@@ -7,6 +7,8 @@ import { CartContext } from '../context/CartContext';
 
 const CartWidget = () => {
   const { nroCarrito } = useContext(CartContext);
+
+  
   return (
     <Button variant="light">
       <FontAwesomeIcon icon={faShoppingCart} />

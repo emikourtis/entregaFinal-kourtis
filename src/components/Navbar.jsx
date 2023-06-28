@@ -21,7 +21,7 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
     <Navbar expand="md" bg="dark" variant="dark" fixed="top">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="mr-2">
-          FakeStore
+          TecnoStore
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbar-nav" onClick={handleToggleNav} />
@@ -34,7 +34,7 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
               onClick={() => handleSelectCategory('all products')}
               className={categoriaSeleccionada === 'all products' ? 'active' : ''}
             >
-              All Products
+              Productos
             </Nav.Link>
             <Nav.Link
               as={Link}
@@ -42,7 +42,7 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
               onClick={() => handleSelectCategory('cells')}
               className={categoriaSeleccionada === 'cells' ? 'active' : ''}
             >
-              Cells
+              Celulares
             </Nav.Link>
             <Nav.Link
               as={Link}
