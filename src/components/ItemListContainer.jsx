@@ -4,14 +4,15 @@ import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-  
+  const [loading, setLoading] = useState(false);
   const [productos, setProductos] = useState([]);
-  const [titulo, setTitulo] = useState("Productos")
+  const [titulo, setTitulo] = useState("Productos");
   const categoria = useParams().categoria || 'todos';
   console.log(categoria)
  
 
   useEffect(() => {
+    setLoading(true);
     pedirDatos()
       .then((res) => {
         console.log(res);
@@ -23,13 +24,15 @@ const ItemListContainer = () => {
           setTitulo('Productos');
         }
         setProductos(productosFiltrados);
+        setLoading(false)
       });
+      
   }, [categoria]);
   
   
   return (
     <div style={{ border: '1px solid black', padding: '10px' }}>
-      <ItemList productos={ productos } titulo={titulo}  />
+      <ItemList productos={ productos } titulo={titulo} loading={loading} />
     </div>
   );
 };
