@@ -55,9 +55,12 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
           </Nav>
         </Navbar.Collapse>
 
-        <Nav className="ml-auto">
+        <Nav.Link 
+         as={Link}
+         to="/cart"
+        className="ml-auto">
           <CartWidget />
-        </Nav>
+        </Nav.Link>
       </Container>
     </Navbar>
   );

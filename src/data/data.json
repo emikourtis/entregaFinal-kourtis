@@ -56,6 +56,15 @@
     {
         "id": "7",
         "name": "Tablet Samsung Galaxy Tab A A7 Lite SM-T220",
+        "price": "480000",
+        "stock": "10",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_2X_887245-MLU69762392805_062023-F.webp",
+        "categoria": "tablets" ,
+        "description": "16gb de capacidad-color plateada-3gb ram-pantalla 8.7-liberado-garantia 6 meses "  
+    },
+    {
+        "id": "8",
+        "name": "Tablet Samsung Galaxy Tab A A7 Lite SM-T220",
         "price": "60000",
         "stock": "10",
         "image": "https://http2.mlstatic.com/D_NQ_NP_2X_887245-MLU69762392805_062023-F.webp",
@@ -63,7 +72,7 @@
         "description": "32gb de capacidad-color plateada-3gb ram-pantalla 8.7-liberado-garantia 6 meses "  
     },
     {
-        "id": "8",
+        "id": "9",
         "name": "iPad Apple 10th generation 2022 A2696",
         "price": "260000",
         "stock": "10",
@@ -72,7 +81,7 @@
         "description": "64gb de capacidad-color plateada-3gb ram-pantalla 10.9-liberado-garantia 6 meses "  
     },
     {
-        "id": "9",
+        "id": "10",
         "name": "iPad Apple 8th generation 2022 A2453",
         "price": "160000",
         "stock": "10",
