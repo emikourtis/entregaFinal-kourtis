@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from './Item';
+import { Spinner } from 'react-bootstrap';
 
 const ItemList = ({ productos, titulo, loading }) => {
   return (
@@ -8,7 +9,9 @@ const ItemList = ({ productos, titulo, loading }) => {
 
       <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
         {loading ?
-          <h1>Cargando productos...</h1>
+           <Spinner animation="border" role="status">
+           <span className="visually-hidden">Loading...</span>
+         </Spinner>
           :
           productos.map((producto) => (
             <Item key={producto.id} producto={producto} />

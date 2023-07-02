@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 import { CartContext } from '../context/CartContext';
 
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, loading }) => {
 
   const { agregarAlCarrito } = useContext(CartContext);
 
@@ -34,6 +34,7 @@ const ItemDetail = ({ item }) => {
   }, []);
   return (
     <div style={{ marginTop: '100px', marginLeft: '25px' }}>
+      
       <Card ref={cardRef} style={{ maxWidth: '245px' }}>
         {item && item.image && (
           <Card.Img
