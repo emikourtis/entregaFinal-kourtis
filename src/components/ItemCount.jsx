@@ -1,6 +1,6 @@
 import { Button, Row, Col } from 'react-bootstrap';
 
-const ItemCount = ( {cantidad, handleRestar, handleSumar, handleAgregar} ) => {
+const ItemCount = ( {cantidad, handleRestar, handleSumar, agregarAlCarrito } ) => {
 
 
 
@@ -17,7 +17,7 @@ const ItemCount = ( {cantidad, handleRestar, handleSumar, handleAgregar} ) => {
           <Button onClick={handleSumar}>+</Button>
         </Col>
       </Row>
-      <Button onClick={ handleAgregar } size="sm" variant="primary">
+      <Button onClick={ agregarAlCarrito } size="sm" variant="primary">
         Agregar al carrito
       </Button>
     </>

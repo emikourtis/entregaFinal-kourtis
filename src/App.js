@@ -1,4 +1,4 @@
-import React from 'react';
+
 import NavBar from './components/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
@@ -15,26 +15,23 @@ function App() {
   const agregarAlCarrito = (item, cantidad) => {
 
     const itemAgregado = { ...item, cantidad };
-    const nuevoCarrito = [itemAgregado]
-
-
-    const estaEnElCarrito = nuevoCarrito.find((prod) => prod.id === itemAgregado.id)
+    const estaEnElCarrito = carrito.find((prod) => prod.id === itemAgregado.id)
     if (estaEnElCarrito) {
       estaEnElCarrito.cantidad += cantidad;
 
     } else {
-      nuevoCarrito.push(itemAgregado);
+      setCarrito([...carrito, itemAgregado]);
 
     }
-    setCarrito(nuevoCarrito);
+    
 
 
   }
-
+  
   const nroCarrito = () => {
     return carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
   }
-  console.log(nroCarrito)
+  console.log(nroCarrito())
 
   return (
     <div>

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { CartContext } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
-import Cart from './Cart';
+
 
 const CartWidget = () => {
   const { nroCarrito } = useContext(CartContext);
@@ -13,7 +13,7 @@ const CartWidget = () => {
   const navigate = useNavigate()
   
   const handleCart = () => {
-    navigate(<Cart/>)
+    navigate('/cart')
   }
   
   return (

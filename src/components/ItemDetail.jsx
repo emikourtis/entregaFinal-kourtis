@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 import { CartContext } from '../context/CartContext';
 
 
-const ItemDetail = ({ item, loading }) => {
+const ItemDetail = ({ item }) => {
 
   const { agregarAlCarrito } = useContext(CartContext);
 
@@ -18,7 +18,7 @@ const ItemDetail = ({ item, loading }) => {
   }
 
   const handleAgregar = () => {
-    agregarAlCarrito()
+    agregarAlCarrito(item, cantidad);
   }
 
   
