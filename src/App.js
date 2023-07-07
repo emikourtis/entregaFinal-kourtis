@@ -4,38 +4,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { useState } from 'react';
-import { CartContext } from './context/CartContext';
 import Cart from './components/Cart';
+import ContextProvider from './context/AppContext';
 
 function App() {
-
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
-  const [carrito, setCarrito] = useState([]);
-
-  const agregarAlCarrito = (item, cantidad) => {
-
-    const itemAgregado = { ...item, cantidad };
-    const estaEnElCarrito = carrito.find((prod) => prod.id === itemAgregado.id)
-    if (estaEnElCarrito) {
-      estaEnElCarrito.cantidad += cantidad;
-
-    } else {
-      setCarrito([...carrito, itemAgregado]);
-
-    }
-    
-
-
-  }
   
-  const nroCarrito = () => {
-    return carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
-  }
-  console.log(nroCarrito())
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
+  
 
   return (
     <div>
-      <CartContext.Provider value={{ carrito, agregarAlCarrito, nroCarrito }}>
+      <ContextProvider>
         <BrowserRouter>
           <NavBar
             categoriaSeleccionada={categoriaSeleccionada}
@@ -55,7 +34,7 @@ function App() {
               element={<Cart />} />
           </Routes>
         </BrowserRouter>
-      </CartContext.Provider>
+      </ContextProvider>
     </div>
   );
 }

@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ItemCount from './ItemCount';
 import { Card } from 'react-bootstrap';
-import { CartContext } from '../context/CartContext';
+import { AppContext } from '../context/AppContext';
 
 
 const ItemDetail = ({ item }) => {
 
-  const { agregarAlCarrito } = useContext(CartContext);
+  const { agregarAlCarrito } = useContext(AppContext);
 
   const [cantidad, setCantidad] = useState(1);
   
@@ -22,24 +22,13 @@ const ItemDetail = ({ item }) => {
   }
 
   
-
-  const cardRef = useRef(null);
-  const [cardHeight, setCardHeight] = useState(0);
-
-  useEffect(() => {
-    if (cardRef.current) {
-      const height = cardRef.current.offsetHeight;
-      setCardHeight(height);
-    }
-  }, []);
   return (
-    <div style={{ marginTop: '100px', marginLeft: '25px' }}>
-      
-      <Card ref={cardRef} style={{ maxWidth: '245px' }}>
+    <div style={{ marginTop: '100px', marginLeft: '25px',  }}>
+      <Card  style={{ maxWidth: '545px', display: 'flex', flexDirection: 'row' }}>
         {item && item.image && (
           <Card.Img
             style={{
-              height: cardHeight,
+              height: '450px',
               maxHeight: '100%',
               objectFit: 'contain',
             }}
@@ -48,25 +37,26 @@ const ItemDetail = ({ item }) => {
             alt={item.name}
           />
         )}
-        <Card.Body>
-          <Card.Title>{item.name}</Card.Title>
-          <Card.Text>Precio: ${item.price}</Card.Text>
-          <Card.Text>{item.description}</Card.Text>
+        <Card.Body style={{}}>
+          <Card.Title>{item.name} <hr/></Card.Title>
+          <Card.Text>Precio: ${item.price} <hr/></Card.Text>
+          <Card.Text>Descripcion: <br/>{item.description} <hr/> </Card.Text>
           <Card.Text>Categoria: {item.categoria}</Card.Text>
         </Card.Body>
-
         <Card.Footer>
-          <ItemCount cantidad={cantidad}
+          <ItemCount
+            cantidad={cantidad}
             handleSumar={handleSumar}
             handleRestar={handleRestar}
             handleAgregar={handleAgregar}
-            agregarAlCarrito={() => { agregarAlCarrito(item, cantidad) }} />
+            agregarAlCarrito={() => {
+              agregarAlCarrito(item, cantidad);
+            }}
+          />
         </Card.Footer>
       </Card>
-
-
     </div>
-  )
-}
+  );
+};
 
 export default ItemDetail;

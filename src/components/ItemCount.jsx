@@ -1,23 +1,32 @@
 import { Button, Row, Col } from 'react-bootstrap';
 
-const ItemCount = ( {cantidad, handleRestar, handleSumar, agregarAlCarrito } ) => {
+const ItemCount = ({ cantidad, handleRestar, handleSumar, agregarAlCarrito }) => {
 
 
 
   return (
     <>
-     <Row>
-        <Col>
-          <Button onClick={handleRestar}>-</Button>
+      <Row style={{display: 'contents'}}>
+        <div>
+          <Col>
+            <Button style={{width:'100%'}} onClick={handleRestar}>-</Button>
+          </Col>
+          <Col>
+            <p style={{marginTop: '10px',
+              display: 'inline-block',
+              padding: '8px 12px',
+              fontSize: '18px',
+            fontWeight: 'bold',
+            color: 'white',
+            backgroundColor: '#0d6efd',
+  borderRadius:'50%'}}>{cantidad}</p>
         </Col>
         <Col>
-          <p>{cantidad}</p>
+          <Button style={{width:'100%'}} onClick={handleSumar}>+</Button>
         </Col>
-        <Col>
-          <Button onClick={handleSumar}>+</Button>
-        </Col>
-      </Row>
-      <Button onClick={ agregarAlCarrito } size="sm" variant="primary">
+      </div>
+    </Row >
+      <Button style={{marginTop: '10px'}} onClick={agregarAlCarrito} size="sm" variant="primary">
         Agregar al carrito
       </Button>
     </>

@@ -3,12 +3,12 @@ import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { CartContext } from '../context/CartContext';
+import { AppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 
 
 const CartWidget = () => {
-  const { nroCarrito } = useContext(CartContext);
+  const { nroCarrito } = useContext(AppContext);
   
   const navigate = useNavigate()
   
@@ -19,7 +19,7 @@ const CartWidget = () => {
   return (
     <Button onClick={handleCart}  variant="light">
       <FontAwesomeIcon icon={faShoppingCart} />
-      <Badge bg="secondary"> {nroCarrito()} </Badge> 
+      <Badge bg="secondary"> {nroCarrito} </Badge> 
     </Button>
    
   );
