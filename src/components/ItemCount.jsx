@@ -19,7 +19,7 @@ const ItemCount = ({ cantidad, handleRestar, handleSumar, agregarAlCarrito }) =>
             fontWeight: 'bold',
             color: 'white',
             backgroundColor: '#0d6efd',
-  borderRadius:'50%'}}>{cantidad}</p>
+  borderRadius:'40%'}}>{cantidad}</p>
         </Col>
         <Col>
           <Button style={{width:'100%'}} onClick={handleSumar}>+</Button>

@@ -23,8 +23,8 @@ const ItemDetail = ({ item }) => {
 
   
   return (
-    <div style={{ marginTop: '100px', marginLeft: '25px',  }}>
-      <Card  style={{ maxWidth: '545px', display: 'flex', flexDirection: 'row' }}>
+    <div style={{ marginTop: '100px', marginLeft: '25px', width:'100%' }}>
+      <Card  style={{ maxWidth: '80%', display: 'flex', flexDirection: 'row' }}>
         {item && item.image && (
           <Card.Img
             style={{
@@ -43,7 +43,7 @@ const ItemDetail = ({ item }) => {
           <Card.Text>Descripcion: <br/>{item.description} <hr/> </Card.Text>
           <Card.Text>Categoria: {item.categoria}</Card.Text>
         </Card.Body>
-        <Card.Footer>
+        <Card.Footer style={{width:'167px'}}>
           <ItemCount
             cantidad={cantidad}
             handleSumar={handleSumar}
