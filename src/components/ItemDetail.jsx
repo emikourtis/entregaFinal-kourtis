@@ -23,27 +23,27 @@ const ItemDetail = ({ item }) => {
 
   
   return (
-    <div style={{ marginTop: '100px', marginLeft: '25px', width:'100%' }}>
-      <Card  style={{ maxWidth: '80%', display: 'flex', flexDirection: 'row' }}>
+    <div style={{ marginTop: '100px', marginLeft: '35px', marginBottom:'30px', width:'70%' }}>
+      <Card  style={{ maxWidth: '80%', display: 'flex', justifyContent:'center', alignItems:'center' }}>
         {item && item.image && (
           <Card.Img
             style={{
-              height: '450px',
-              maxHeight: '100%',
-              objectFit: 'contain',
+              height: '30%',
+              width: '50%'
+              
             }}
             variant="top"
             src={item.image}
             alt={item.name}
           />
         )}
-        <Card.Body style={{}}>
-          <Card.Title>{item.name} <hr/></Card.Title>
-          <Card.Text>Precio: ${item.price} <hr/></Card.Text>
-          <Card.Text>Descripcion: <br/>{item.description} <hr/> </Card.Text>
+        <Card.Body style={{textAlign: 'center'}}>
+          <Card.Title style={{fontSize:'25px'}}>{item.name} </Card.Title>
+          <Card.Text  style={{fontSize:'20px'}}>Precio: ${item.price} </Card.Text>
+          <Card.Text>Descripcion: <br/>{item.description} </Card.Text>
           <Card.Text>Categoria: {item.categoria}</Card.Text>
         </Card.Body>
-        <Card.Footer style={{width:'167px'}}>
+        <Card.Footer style={{width:'100%', marginBottom:'35px'}}>
           <ItemCount
             cantidad={cantidad}
             handleSumar={handleSumar}

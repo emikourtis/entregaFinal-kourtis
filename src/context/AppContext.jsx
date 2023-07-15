@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import Swal from 'sweetalert2'
 
 export const AppContext = createContext();
 
@@ -27,16 +28,21 @@ const ContextProvider = ( {children} ) =>{
       return carrito.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0)
     }
 
+    const nroCarrito = ()=>{
+      return carrito.reduce((acc, prod) => acc + prod.cantidad, 0)
+    }
+
     useEffect(()=>{
       localStorage.setItem("carrito", JSON.stringify(carrito))
     },[carrito])
 
     const vaciarCarrito = () =>{
       setCarrito([])
+      Swal.fire('Tu carrito esta vacio')
     }
 
 return (
-    <Provider value={{ carrito, agregarAlCarrito, nroCarrito: carrito.length, totalCarrito, vaciarCarrito }}>
+    <Provider value={{ carrito, agregarAlCarrito, nroCarrito , totalCarrito, vaciarCarrito }}>
         { children }
     </Provider>
 )

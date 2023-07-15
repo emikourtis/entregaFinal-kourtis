@@ -18,7 +18,7 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
   };
 
   return (
-    <Navbar expand="md" bg="dark" variant="dark" fixed="top">
+    <Navbar expand="md" bg="dark" variant="dark" fixed="center">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="mr-2">
           TecnoStore
@@ -52,10 +52,25 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
             >
               Tablets
             </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/productos/accesorios"
+              onClick={() => handleSelectCategory('accesorios')}
+              className={categoriaSeleccionada === 'accesorios' ? 'active' : ''}
+            >
+              Accesorios
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/productos/laptop"
+              onClick={() => handleSelectCategory('laptop')}
+              className={categoriaSeleccionada === 'laptop' ? 'active' : ''}
+            >
+              Laptops
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-
-        <Nav.Link 
+          <Nav.Link 
          as={Link}
          to="/cart"
         className="ml-auto">

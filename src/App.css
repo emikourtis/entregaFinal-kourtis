@@ -1,5 +1,8 @@
-.bg-warning{
-  background-color: #9CCED9;
+body{
+  background-image: url("../public/fondo2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 

@@ -6,6 +6,9 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { useState } from 'react';
 import Cart from './components/Cart';
 import ContextProvider from './context/AppContext';
+import FinalizarCompra from './components/FinalizarCompra';
+import MensajeGracias from './components/MensajeGracias';
+import "./App.css"
 
 function App() {
   
@@ -32,6 +35,12 @@ function App() {
             <Route
               path="/cart"
               element={<Cart />} />
+              <Route
+              path="/finalizarCompra"
+              element={<FinalizarCompra />} />
+              <Route
+              path="/MensajeGracias"
+              element={<MensajeGracias />} />
           </Routes>
         </BrowserRouter>
       </ContextProvider>

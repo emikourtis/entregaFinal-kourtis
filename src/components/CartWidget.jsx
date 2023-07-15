@@ -17,10 +17,13 @@ const CartWidget = () => {
   }
   
   return (
-    <Button onClick={handleCart}  variant="light">
+    <>
+    
+      <Button onClick={handleCart}  variant="light">
       <FontAwesomeIcon icon={faShoppingCart} />
-      <Badge bg="secondary"> {nroCarrito} </Badge> 
+      <Badge bg="secondary"> {nroCarrito()} </Badge> 
     </Button>
+    </>
    
   );
 }
