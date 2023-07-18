@@ -6,13 +6,12 @@ import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
-  const { id } = useParams(); 
-  
+  const { id } = useParams();
 
   useEffect(() => {
     const docRef = doc(database, "productos", id)
     getDoc(docRef)
-      .then((resp)=>{
+      .then((resp) => {
         setItem({ ...resp.data(), id: resp.id })
       })
   }, [id]);

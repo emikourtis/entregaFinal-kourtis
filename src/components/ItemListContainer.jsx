@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where } from 'firebase/firestore';
@@ -8,10 +7,8 @@ import { database } from '../firebase/configuracion';
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(false);
   const [productos, setProductos] = useState([]);
-  
-  const categoria = useParams().categoria ;
 
-
+  const categoria = useParams().categoria;
 
   useEffect(() => {
     setLoading(true);
@@ -33,7 +30,7 @@ const ItemListContainer = () => {
 
   return (
     <div style={{ border: '1px solid black', padding: '10px' }}>
-      <ItemList productos={productos}  loading={loading} />
+      <ItemList productos={productos} loading={loading} />
     </div>
   );
 };

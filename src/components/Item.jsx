@@ -31,9 +31,9 @@ const Item = ({ producto }) => {
           <Card.Text>${producto.price}</Card.Text>
           <Card.Text>{producto.categoria}</Card.Text>
         </Card.Body>
-        
+
         <Card.Footer>
-          <Link className='btn btn-primary btn-sm'  to={`/item/${producto.id}`}>Detalle del producto</Link>
+          <Link className='btn btn-primary btn-sm' to={`/item/${producto.id}`}>Detalle del producto</Link>
         </Card.Footer>
       </Card>
     </div>

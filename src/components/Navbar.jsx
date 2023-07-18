@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
-  
+
 
   const [expanded, setExpanded] = useState(false);
 
@@ -29,6 +29,7 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
         <Navbar.Collapse id="navbar-nav" className={expanded ? 'show' : ''}>
           <Nav className="mr-auto">
             <Nav.Link
+              style={{ marginLeft: '200px' }}
               as={Link}
               to="/"
               onClick={() => handleSelectCategory('all products')}
@@ -70,10 +71,10 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-          <Nav.Link 
-         as={Link}
-         to="/cart"
-        className="ml-auto">
+        <Nav.Link
+          as={Link}
+          to="/cart"
+          className="ml-auto">
           <CartWidget />
         </Nav.Link>
       </Container>

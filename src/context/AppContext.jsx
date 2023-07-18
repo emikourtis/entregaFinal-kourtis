@@ -42,7 +42,7 @@ const ContextProvider = ( {children} ) =>{
     }
 
 return (
-    <Provider value={{ carrito, agregarAlCarrito, nroCarrito , totalCarrito, vaciarCarrito }}>
+    <Provider value={{ carrito, setCarrito, agregarAlCarrito, nroCarrito , totalCarrito, vaciarCarrito }}>
         { children }
     </Provider>
 )

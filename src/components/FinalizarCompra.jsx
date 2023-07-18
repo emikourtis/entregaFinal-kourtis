@@ -9,13 +9,13 @@ import './finalizarCompra.css'
 
 
 const FinalizarCompra = () => {
-    const {vaciarCarrito, carrito, totalCarrito} = useContext(AppContext)
+    const { vaciarCarrito, carrito, totalCarrito } = useContext(AppContext)
     const navigate = useNavigate()
     const [pedidoId, setPedidoId] = useState("")
     const { register, handleSubmit } = useForm();
-    
+
     const enviar = (data) => {
-        
+
         const dataPedido = {
             cliente: data,
             Pedido: carrito,
@@ -25,7 +25,7 @@ const FinalizarCompra = () => {
         handleFinalizar()
         const pedidosRef = collection(database, "pedidos")
         addDoc(pedidosRef, dataPedido)
-            .then((doc) =>{
+            .then((doc) => {
                 setPedidoId(doc.id)
             })
     }
@@ -33,23 +33,23 @@ const FinalizarCompra = () => {
         vaciarCarrito();
         Swal.fire(
             'GRACIAS POR TU COMPRA!',
-            
+
             'success'
-          )
+        )
         navigate('/mensajeGracias')
         console.log(pedidoId)
     }
 
 
     return (
-        <div style={{margin:"100px", color: 'white'}}>
+        <div style={{ margin: "100px", color: 'white' }}>
             <h1>Finalizar Compra</h1>
             <br />
-            <h3 style={{marginBottom:"25px"}}>Completa tus datos de contacto</h3>
-            <form style={{display:"flex",flexDirection:"column",width:"35%"}} onSubmit={handleSubmit(enviar)}>
-                <input className='inputs' style={{marginBottom:"20px"}} type='text' placeholder='Nombre y Apellido' {...register("nombre y apellido")} />
-                <input className='inputs' style={{marginBottom:"20px"}} type='email' placeholder='Email...' {...register("email")} />
-                <input className='inputs' style={{marginBottom:"20px"}} type='phone' placeholder='Telefono..(11) xxx xxx xx' {...register("telefono")} />
+            <h3 style={{ marginBottom: "25px" }}>Completa tus datos de contacto</h3>
+            <form style={{ display: "flex", flexDirection: "column", width: "35%" }} onSubmit={handleSubmit(enviar)}>
+                <input className='inputs' style={{ marginBottom: "20px" }} type='text' placeholder='Nombre y Apellido' {...register("nombre y apellido")} />
+                <input className='inputs' style={{ marginBottom: "20px" }} type='email' placeholder='Email...' {...register("email")} />
+                <input className='inputs' style={{ marginBottom: "20px" }} type='phone' placeholder='Telefono..(11) xxx xxx xx' {...register("telefono")} />
 
                 <button className='enviar btn btn-primary btn-sm' type='submit'>Finalizar</button>
             </form>

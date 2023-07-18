@@ -1,4 +1,3 @@
-
 import NavBar from './components/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
@@ -11,9 +10,8 @@ import MensajeGracias from './components/MensajeGracias';
 import "./App.css"
 
 function App() {
-  
+
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
-  
 
   return (
     <div>
@@ -31,14 +29,15 @@ function App() {
             <Route
               path="/item/:id"
               element={<ItemDetailContainer />} />
-            <Route path="/productos/:categoria" element={<ItemListContainer />} />
+            <Route path="/productos/:categoria"
+             element={<ItemListContainer />} />
             <Route
               path="/cart"
               element={<Cart />} />
-              <Route
+            <Route
               path="/finalizarCompra"
               element={<FinalizarCompra />} />
-              <Route
+            <Route
               path="/MensajeGracias"
               element={<MensajeGracias />} />
           </Routes>
