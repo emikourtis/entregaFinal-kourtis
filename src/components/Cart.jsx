@@ -21,7 +21,13 @@ const Cart = () => {
     setCarrito(nuevoCarrito);
   };
 
-
+  const validation = ()=>{
+    if(carrito.length === 0){
+      return false
+    }else{
+      return true
+    }
+  }
   return (
     <div style={{ marginTop: '100px', marginLeft: '100px', color: "white" }}>
       <h1>Carrito</h1>
@@ -53,8 +59,8 @@ const Cart = () => {
         )
       }
       <h3>Total Compra: ${totalCarrito()} </h3>
-      <button className='vaciar' onClick={handleComprar} >COMPRAR</button>
-      <button className='vaciar' onClick={handleVaciar} >Vaciar Carrito</button>
+      <button className='vaciar' disabled={!validation()} onClick={handleComprar} >COMPRAR</button>
+      <button className='vaciar' disabled={!validation()} onClick={handleVaciar} >Vaciar Carrito</button>
     </div>
   )
 }

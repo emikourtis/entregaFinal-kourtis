@@ -1,5 +1,7 @@
 # Proyecto e-commerce (React) para CoderHouse
 
+Para levantar la pagina necesitamos hacer npm install y luego npm start
+
 ### env variables
 TECNOSTORE_FIREBASE_API_KEY=AIzaSyDLYRy8nhCk7lFDC79coWOfHICxhqNA2WI
 
