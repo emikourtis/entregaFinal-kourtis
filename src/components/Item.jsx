@@ -15,7 +15,7 @@ const Item = ({ producto }) => {
 
   return (
     <div>
-      <Card ref={cardRef} style={{ maxWidth: '345px' }}>
+      <Card ref={cardRef} style={{ maxWidth: '345px', opacity:'0.75' }}>
         <Card.Img
           style={{
             height: cardHeight,
