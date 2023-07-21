@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
 import ItemCount from './ItemCount';
 import { Card } from 'react-bootstrap';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../../context/AppContext';
+
 
 
 const ItemDetail = ({ item }) => {

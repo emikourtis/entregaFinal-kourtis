@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { database } from '../firebase/configuracion';
+import { database } from '../../firebase/configuracion';
+
 
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(false);

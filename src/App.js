@@ -1,12 +1,12 @@
-import NavBar from './components/Navbar';
+import NavBar from './components/Navbar/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/Item-list/ItemListContainer';
+import ItemDetailContainer from './components/Item-detail/ItemDetailContainer';
 import { useState } from 'react';
-import Cart from './components/Cart';
+import Cart from './components/Cart/Cart';
 import ContextProvider from './context/AppContext';
-import FinalizarCompra from './components/FinalizarCompra';
-import MensajeGracias from './components/MensajeGracias';
+import FinalizarCompra from './components/Finalizar-compra/FinalizarCompra';
+import MensajeGracias from './components/Finalizar-compra/MensajeGracias';
 import "./App.css"
 
 function App() {

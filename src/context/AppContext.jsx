@@ -9,7 +9,10 @@ const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
 const ContextProvider = ( {children} ) =>{
+  
     const [carrito, setCarrito] = useState(carritoInicial);
+    const [pedidoId, setPedidoId] = useState("");
+    
     const agregarAlCarrito = (item, cantidad) => {
 
         const itemAgregado = { ...item, cantidad };
@@ -42,7 +45,7 @@ const ContextProvider = ( {children} ) =>{
     }
 
 return (
-    <Provider value={{ carrito, setCarrito, agregarAlCarrito, nroCarrito , totalCarrito, vaciarCarrito }}>
+    <Provider value={{ pedidoId, setPedidoId, carrito, setCarrito, agregarAlCarrito, nroCarrito, totalCarrito, vaciarCarrito }}>
         { children }
     </Provider>
 )

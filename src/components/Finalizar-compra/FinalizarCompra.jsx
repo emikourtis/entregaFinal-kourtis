@@ -1,25 +1,24 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { useForm } from "react-hook-form"
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
 import { addDoc, collection } from 'firebase/firestore';
-import { database } from '../firebase/configuracion';
-import Swal from 'sweetalert2'
-import './finalizarCompra.css'
+import '../Finalizar-compra/finalizarCompra.css'
+import { AppContext } from '../../context/AppContext';
+import { database } from '../../firebase/configuracion';
 
 
 const FinalizarCompra = () => {
     const { vaciarCarrito, carrito, totalCarrito } = useContext(AppContext)
     const navigate = useNavigate()
-    const [pedidoId, setPedidoId] = useState("")
+    const { setPedidoId } = useContext(AppContext);
     const { register, formState: { errors }, handleSubmit } = useForm();
-
+    
     const enviar = (data) => {
 
         const dataPedido = {
             cliente: data,
             Pedido: carrito,
-            total: totalCarrito()
+            total: totalCarrito()  
         }
         
         handleFinalizar()
@@ -31,15 +30,9 @@ const FinalizarCompra = () => {
     }
     const handleFinalizar = () => {
         vaciarCarrito();
-        Swal.fire(
-            'GRACIAS POR TU COMPRA!',
-
-            'success'
-        )
         navigate('/mensajeGracias')
-        console.log(pedidoId)
     }
-
+    
 
     return (
         <div style={{ margin: "100px", color: 'white' }}>

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { AppContext } from '../context/AppContext'
-import './cart.css'
+import '../Cart/cart.css'
 import { useNavigate } from 'react-router-dom'
 import { Table } from 'react-bootstrap'
+import { AppContext } from '../../context/AppContext'
 
 
 const Cart = () => {

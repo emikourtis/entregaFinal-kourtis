@@ -2,7 +2,10 @@ import React, { useRef, useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-const Item = ({ producto }) => {
+
+const Item = ({ producto, agregarAlCarrito }) => {
+ 
+  
   const cardRef = useRef(null);
   const [cardHeight, setCardHeight] = useState(0);
 
@@ -33,7 +36,8 @@ const Item = ({ producto }) => {
         </Card.Body>
 
         <Card.Footer>
-          <Link className='btn btn-primary btn-sm' to={`/item/${producto.id}`}>Detalle del producto</Link>
+          <Link className='btn btn-primary btn-m' to={`/item/${producto.id}`}>Comprar</Link>
+          
         </Card.Footer>
       </Card>
     </div>
