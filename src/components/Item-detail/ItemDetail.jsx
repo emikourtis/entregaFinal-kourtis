@@ -39,9 +39,9 @@ const ItemDetail = ({ item }) => {
           )}
           <Card.Body style={{ textAlign: 'center' }}>
             <Card.Title style={{ fontSize: '25px' }}>{item.name} </Card.Title>
-            <Card.Text style={{ fontSize: '20px' }}>Precio: ${item.price} </Card.Text>
-            <Card.Text>Descripcion: <br />{item.description} </Card.Text>
-            <Card.Text>Categoria: {item.categoria}</Card.Text>
+            <Card.Text style={{ fontSize: '20px' }}><h3>Precio: ${item.price}</h3> </Card.Text>
+            <Card.Text> <h4> Descripcion: </h4> <br/> {item.description} </Card.Text>
+            <Card.Text><h4>Categoria: </h4>{item.categoria}</Card.Text>
           </Card.Body>
           <Card.Footer style={{ width: '100%', marginBottom: '35px' }}>
             <ItemCount

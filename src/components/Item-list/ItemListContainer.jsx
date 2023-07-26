@@ -8,7 +8,7 @@ import { database } from '../../firebase/configuracion';
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(false);
   const [productos, setProductos] = useState([]);
-
+  const [titulo, setTitulo] = useState("Productos");
   const categoria = useParams().categoria;
 
   useEffect(() => {
@@ -19,10 +19,12 @@ const ItemListContainer = () => {
     getDocs(q)
       .then((resp) => {
         setLoading(false)
+        setTitulo(categoria)
         setProductos(
           resp.docs.map((doc) => {
             return { ...doc.data(), id: doc.id }
           })
+          
         )
       })
   }, [categoria]);
@@ -31,7 +33,7 @@ const ItemListContainer = () => {
 
   return (
     <div style={{ border: '1px solid black', padding: '10px' }}>
-      <ItemList productos={productos} loading={loading} />
+      <ItemList productos={productos} loading={loading} titulo={titulo}/>
     </div>
   );
 };

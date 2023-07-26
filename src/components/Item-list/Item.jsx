@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 
-const Item = ({ producto, agregarAlCarrito }) => {
+const Item = ({ producto }) => {
  
   
   const cardRef = useRef(null);
@@ -32,7 +32,7 @@ const Item = ({ producto, agregarAlCarrito }) => {
         <Card.Body>
           <Card.Title>{producto.name}</Card.Title>
           <Card.Text>${producto.price}</Card.Text>
-          <Card.Text>{producto.categoria}</Card.Text>
+          <Card.Text>CATEGORIA: {producto.categoria}</Card.Text>
         </Card.Body>
 
         <Card.Footer>

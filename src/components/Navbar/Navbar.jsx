@@ -32,8 +32,8 @@ function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
               style={{ marginLeft: '200px' }}
               as={Link}
               to="/"
-              onClick={() => handleSelectCategory('all products')}
-              className={categoriaSeleccionada === 'all products' ? 'active' : ''}
+              onClick={() => handleSelectCategory('productos')}
+              className={categoriaSeleccionada === 'productos' ? 'active' : ''}
             >
               Productos
             </Nav.Link>
