@@ -2,8 +2,8 @@
 
 ### Instalacion
 Para levantar la pagina necesitamos hacer 
-npm install 
-npm start
+-npm install 
+-npm start
 
 ### env variables
 TECNOSTORE_FIREBASE_API_KEY=AIzaSyDLYRy8nhCk7lFDC79coWOfHICxhqNA2WI
