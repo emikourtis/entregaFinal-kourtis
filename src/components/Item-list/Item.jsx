@@ -36,7 +36,7 @@ const Item = ({ producto }) => {
         </Card.Body>
 
         <Card.Footer>
-          <Link className='btn btn-primary btn-m' to={`/item/${producto.id}`}>Comprar</Link>
+          <Link className='btn btn-primary btn-m' to={`/item/${producto.id}`}>¡LO QUIERO!</Link>
           
         </Card.Footer>
       </Card>

@@ -1,11 +1,9 @@
-
 import React, { useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 function NavBar({ categoriaSeleccionada, setCategoriaSeleccionada }) {
-
 
   const [expanded, setExpanded] = useState(false);
 

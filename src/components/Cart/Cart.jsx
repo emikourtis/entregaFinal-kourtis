@@ -21,10 +21,10 @@ const Cart = () => {
     setCarrito(nuevoCarrito);
   };
 
-  const validation = ()=>{
-    if(carrito.length === 0){
+  const validation = () => {
+    if (carrito.length === 0) {
       return false
-    }else{
+    } else {
       return true
     }
   }
